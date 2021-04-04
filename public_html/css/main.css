@@ -1,0 +1,13 @@
+body {
+    font-family: Open Sans;
+}
+
+table, th, td {
+  border: 1px solid #a5a5a5;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+}
