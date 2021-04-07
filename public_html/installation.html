@@ -18,156 +18,152 @@
 </head>
 
 <body>
-  <div class="jumbotron text-left">
-    <img src="assets/ruby.png" height="100">
-    <h5>CS 354: Programming Languages (Spring 2021)</h5>
-  </div>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Team Perch</a>
-    <ul class="navbar-nav">
-      <li class="navbar-item"><a class="nav-link" href="index.html">Home&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="documentation.html">Documentation&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="installation.html">Installation&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="comparisons.html">Language Comparisons&nbsp;&nbsp;|</a>
-      </li>
-      <li class="navbar-item"><a class="nav-link" href="examples.html">Code Examples</a></li>
-    </ul>
-  </nav>
-  <div class="container" style="margin-top:30px">
-    <h3>Installation</h3>
+<div class="jumbotron text-left">
+  <img src="assets/ruby.png" height="100">
+  <h5>CS 354: Programming Languages (Spring 2021)</h5>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Team Perch</a>
+  <ul class="navbar-nav">
+    <li class="navbar-item"><a class="nav-link" href="index.html">Home&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="documentation.html">Documentation&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="installation.html">Installation&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="comparisons.html">Language Comparisons&nbsp;&nbsp;|</a>
+    </li>
+    <li class="navbar-item"><a class="nav-link" href="examples.html">Code Examples</a></li>
+  </ul>
+</nav>
+<div class="container" style="margin-top:30px">
+  <h3>Installation</h3>
+  <p>
+    You can try Ruby in your browser now at the following link <a href="https://try.ruby-lang.org/"></a>
+  </p>
+  <h3>Installing Ruby</h3>
+  <p>
     There are several ways to install Ruby:
-    <ul>
-      <li>UNIX-like OSs, using the package manager for your specific distribution is the easiest. Keeping in mind
-        the
-        packaged Ruby version may not be the newest one.
-      </li>
-      <li>Windows 10 (WSL) may be used to install a supported version of Ruby.</li>
-      <li>Installers can be used to install a specific or multiple versions of Ruby; including a Windows
-        installer.
-      </li>
-      <li>Managers help you to switch between Ruby versions on your system.</li>
-      <li>Additionally, you may choose to build Ruby from source.</li>
-    </ul>
+  </p>
+  <ul>
+    <li>UNIX-like OSs, using the package manager for your specific distribution is the easiest. Keeping in mind
+      the
+      packaged Ruby version may not be the newest one.
+    </li>
+    <li>Windows 10 (WSL) may be used to install a supported version of Ruby.</li>
+    <li>Installers can be used to install a specific or multiple versions of Ruby; including a Windows
+      installer.
+    </li>
+    <li>Managers help you to switch between Ruby versions on your system.</li>
+    <li>Additionally, you may choose to build Ruby from source.</li>
+  </ul>
+  <h4>Package Management Systems</h4>
+  <h5>apt (Debian or Ubuntu)</h5>
+  <code class="terminal-cmd">
+    $ sudo apt-get install ruby-full
+  </code>
+  <br>
+  <h5>yum (CentOS, Fedora, or RHEL)</h5>
+  <code class="terminal-cmd">
+    $ sudo yum install ruby
+  </code>
+  <br>
+  <h5>snap (Ubuntu or other Linux distributions)</h5>
+  <p>
+    The Snap package manager is developed by Canonical and provides the ability to switch between various
+    channels.
+  </p>
+  <code class="terminal-cmd">
+    $ sudo snap install ruby --classic
 
-    <h4>Package Management Systems</h4>
-    <h5>apt (Debian or Ubuntu)</h5>
-    <code>
-  $ sudo apt-get install ruby-full
-    </code>
-    <br>
-    <h5>yum (CentOS, Fedora, or RHEL)</h5>
-    <code>
-  $ sudo yum install ruby
-    </code>
-    <br>
-    <h5>snap (Ubuntu or other Linux distributions)</h5>
-    <p>
-      The Snap package manager is developed by Canonical and provides the ability to switch between various
-      channels.
-    </p>
-    <code>
-  $ sudo snap install ruby --classic
+    -- switching between channels --
 
-  -- switching between channels --
-
-  $ sudo snap switch ruby --channel=2.3/stable
-  $ sudo snap refresh
-    </code>
-    <br>
-    <h5>pacman (Arch Linux)</h5>
-    <code>
-  $ sudo pacman -S ruby
-    </code>
-    <br>
-    <h5>Homebrew (macOS)</h5>
-    <code>
-  $ brew install ruby
-    </code>
-    <br>
-    <h5>FreeBSD</h5>
-    <code>
-  $ pkg install ruby
-    </code>
-    <br>
-    <p>
-      (Refer to the <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby installation
-        guide</a> for additional help.)
-    </p>
-    <h4>Installers</h4>
-    <p>
-      If the version of Ruby for your particular system is out of date, you may choose to use an installer;
-      many support switching between versions. If you choose to use <a
-        href="https://www.ruby-lang.org/en/documentation/installation/#rvm">RVM</a> as a version manager, no
-      additional installer is required.
-    </p>
-
-    <a href="https://github.com/rbenv/ruby-build#readme">ruby-build</a>
-    <p>
-      This is a plugin for <a href="https://www.ruby-lang.org/en/documentation/installation/#rbenv">rbenv</a>
-      which allows for compiling and installing multiple versions of Ruby. It is available for macOS, Linux,
-      and other UNIX-like OSs.
-    </p>
-
-    <a href="https://github.com/postmodern/ruby-install#readme">ruby-install</a>
-    <p>
-      Installer which allows compiling and installing multiplier versions of Ruby into arbitrary target
-      directories. The complementary tool <a
-        href="https://www.ruby-lang.org/en/documentation/installation/#chruby">chruby</a> allows users to
-      switch between Ruby versions. Available for macOS, Linux, and other UNIX-like OSs.
-    </p>
-
-    <a href="https://rubyinstaller.org/">RubyInstaller</a>
-    <p>
-      Windows installer providing a full Ruby development environment.
-    </p>
-
-    <a href="http://bitnami.com/stack/ruby/installer">RubyStack</a>
-    <p>
-      If you intend to install Ruby to use Ruby on Rails, this installer provides a complete development
-      environment and supports macOS, Linux, Windows, virtual machines, and cloud images.
-    </p>
-    <h4>Managers</h4>
-    <p>
-      Managers allow for ease or automatic switching between Ruby versions depending on project and other
-      advantages, but are not officially supported.
-    </p>
-
-    <a href="https://asdf-vm.com/">asdf-vm</a>
-    <p>
-      Extendable version manager supporting multiple languages.
-    </p>
-
-    <a href="https://www.ruby-lang.org/en/documentation/installation/#chruby">chruby</a>
-    <p>
-      Provides support for switching being Ruby versions installed by ruby-install or build from source.
-    </p>
-
-    <a href="https://www.ruby-lang.org/en/documentation/installation/#rbenv">rbenv</a>
-    <p>
-      Manages multiple installations but lacks the ability to install Ruby itself.
-    </p>
-
-    <a href="https://www.ruby-lang.org/en/documentation/installation/#rvm">RVM</a> (“Ruby Version Manager”)
-    <p></p>
-
-    <a href="https://bitbucket.org/jonforums/uru">uru</a>
-    <p>
-      Lightweight, multi-platform command line tool which supports most OSs.
-    </p>
-    <h4>Building from Source</h4>
-    <p>
-      Finally, you can install Ruby from the source once downloaded and unpacked.
-    </p>
-    <code>
-  $ ./configure
-  $ make
-  $ sudo make install
-    </code>
-    <br>
-    <p>
-      The default install location for Ruby is /usr/local.
-    </p>
-  </div>
+    $ sudo snap switch ruby --channel=2.3/stable
+    $ sudo snap refresh
+  </code>
+  <br>
+  <h5>pacman (Arch Linux)</h5>
+  <code class="terminal-cmd">
+    $ sudo pacman -S ruby
+  </code>
+  <br>
+  <h5>Homebrew (macOS)</h5>
+  <code class="terminal-cmd">
+    $ brew install ruby
+  </code>
+  <br>
+  <h5>FreeBSD</h5>
+  <code class="terminal-cmd">
+    $ pkg install ruby
+  </code>
+  <br>
+  <p>
+    (Refer to the <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby installation
+    guide</a> for additional help.)
+  </p>
+  <h4>Installers</h4>
+  <p>
+    If the version of Ruby for your particular system is out of date, you may choose to use an installer;
+    many support switching between versions. If you choose to use <a
+          href="https://www.ruby-lang.org/en/documentation/installation/#rvm">RVM</a> as a version manager, no
+    additional installer is required.
+  </p>
+  <a href="https://github.com/rbenv/ruby-build#readme">ruby-build</a>
+  <p>
+    This is a plugin for <a href="https://www.ruby-lang.org/en/documentation/installation/#rbenv">rbenv</a>
+    which allows for compiling and installing multiple versions of Ruby. It is available for macOS, Linux,
+    and other UNIX-like OSs.
+  </p>
+  <a href="https://github.com/postmodern/ruby-install#readme">ruby-install</a>
+  <p>
+    Installer which allows compiling and installing multiplier versions of Ruby into arbitrary target
+    directories. The complementary tool <a
+          href="https://www.ruby-lang.org/en/documentation/installation/#chruby">chruby</a> allows users to
+    switch between Ruby versions. Available for macOS, Linux, and other UNIX-like OSs.
+  </p>
+  <a href="https://rubyinstaller.org/">RubyInstaller</a>
+  <p>
+    Windows installer providing a full Ruby development environment.
+  </p>
+  <a href="http://bitnami.com/stack/ruby/installer">RubyStack</a>
+  <p>
+    If you intend to install Ruby to use Ruby on Rails, this installer provides a complete development
+    environment and supports macOS, Linux, Windows, virtual machines, and cloud images.
+  </p>
+  <h4>Managers</h4>
+  <p>
+    Managers allow for ease or automatic switching between Ruby versions depending on project and other
+    advantages, but are not officially supported.
+  </p>
+  <a href="https://asdf-vm.com/">asdf-vm</a>
+  <p>
+    Extendable version manager supporting multiple languages.
+  </p>
+  <a href="https://www.ruby-lang.org/en/documentation/installation/#chruby">chruby</a>
+  <p>
+    Provides support for switching being Ruby versions installed by ruby-install or build from source.
+  </p>
+  <a href="https://www.ruby-lang.org/en/documentation/installation/#rbenv">rbenv</a>
+  <p>
+    Manages multiple installations but lacks the ability to install Ruby itself.
+  </p>
+  <a href="https://www.ruby-lang.org/en/documentation/installation/#rvm">RVM</a> (“Ruby Version Manager”)
+  <p></p>
+  <a href="https://bitbucket.org/jonforums/uru">uru</a>
+  <p>
+    Lightweight, multi-platform command line tool which supports most OSs.
+  </p>
+  <h4>Building from Source</h4>
+  <p>
+    Finally, you can install Ruby from the source once downloaded and unpacked.
+  </p>
+  <code class="terminal-cmd">
+    $ ./configure
+    $ make
+    $ sudo make install
+  </code>
+  <br>
+  <p>
+    The default install location for Ruby is /usr/local.
+  </p>
+</div>
 </body>
 
 </html>

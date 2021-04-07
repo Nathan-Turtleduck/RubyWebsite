@@ -18,166 +18,213 @@
 </head>
 
 <body>
-  <div class="jumbotron text-left">
-    <img src="assets/ruby.png" height="100">
-    <h5>CS 354: Programming Languages (Spring 2021)</h5>
-  </div>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Team Perch</a>
-    <ul class="navbar-nav">
-      <li class="navbar-item"><a class="nav-link" href="index.html">Home&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="documentation.html">Documentation&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="installation.html">Installation&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="comparisons.html">Language Comparisons&nbsp;&nbsp;|</a></li>
-      <li class="navbar-item"><a class="nav-link" href="examples.html">Code Examples</a></li>
-    </ul>
-  </nav>
-  <div class="container" style="margin-top:30px">
-    <h3>Language Comparisons</h3>
-
-    <h4>Ruby from C</h4>
-    <table class="table table-borderless">
-      <caption>Table 1: Ruby from C</caption>
-      <thead>
-        <tr>
-          <th>Similarities</th>
-          <th>Differences</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>Ipsum Lorem</td>
-        <td>Ipsum Lorem</td>
-      </tr>
-    </table>
-    <h4>Ruby from Java</h4>
-    <table class="table table-borderless">
-      <caption>Table 2: Ruby from Java</caption>
-      <thead>
-        <tr>
-          <th>Similarities</th>
-          <th>Differences</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>Ipsum Lorem</td>
-        <td>Ipsum Lorem</td>
-      </tr>
-    </table>
-    <h4>Ruby from Perl</h4>
-    <table class="table table-borderless">
-      <caption>Table 3: Ruby from Perl</caption>
-      <thead>
-        <tr>
-          <th>Similarities</th>
-          <th>Differences</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>You’ve got a package management system, somewhat like CPAN (though it’s called RubyGems).</td>
-        <td>You don’t have the context-dependent rules like with Perl.</td>
-      </tr>
-      <tr>
-        <td>Regexes are built right in. Bon appétit!</td>
-        <td>A variable isn’t the same as the object to which it refers. Instead, it’s always just a reference to
-          an object.
-        </td>
-      </tr>
-      <tr>
-        <td>There’s a fairly large number of commonly-used built-ins.</td>
-        <td>Although $ and @ are used as the first character in variable names sometimes, rather than indicating
-          type, they indicate scope ($ for globals, @ for object instance, and @@ for class attributes).
-        </td>
-      </tr>
-      <tr>
-        <td>Parentheses are often optional.</td>
-        <td>Array literals go in brackets instead of parentheses.</td>
-      </tr>
-      <tr>
-        <td>Strings work basically the same.</td>
-        <td>Lists of lists are an array of arrays.</td>
-      </tr>
-      <tr>
-        <td>Regex quoting and delimiting syntax is comparable to Perl’s.</td>
-        <td>It’s def instead of sub.</td>
-      </tr>
-      <tr>
-        <td>You’ve got double-quotish variable interpolation, though it "looks #{like} this" (and you can put
-          any Ruby code you like inside that #{}).
-        </td>
-        <td>There’s no semicolons needed at the end of each line. Incidentally, you end things like function
-          definitions, class definitions, and case statements with the end keyword.
-        </td>
-      </tr>
-      <tr>
-        <td>Shell command expansion uses `backticks`.</td>
-        <td>Objects are strongly typed.</td>
-      </tr>
-      <tr>
-        <td>Embedded doc tools called rdoc.</td>
-        <td>There’s no eq, ne, lt, gt, ge, nor le.</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>'=>' (fat comma) is only used for hash literals.</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>There’s no undef. It’s not the same as an undefined variable. It evaluates to false if you treat it
-          like a boolean.
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>When tested for truth, only false and nil evaluate to a false value. Everything else is true
-          (including 0, 0.0, and "0").
-        </td>
-      </tr>
-    </table>
-    <h4>Ruby from PHP</h4>
-    <table class="table table-borderless">
-      <caption>Table 4: Ruby from PHP</caption>
-      <thead>
-        <tr>
-          <th>Similarities</th>
-          <th>Differences</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>Dynamically type</td>
-        <td>Strong typing</td>
-      </tr>
-      <tr>
-        <td>You have several class access control: public, protected and private</td>
-        <td>String, numbers , arrays are objects</td>
-      </tr>
-      <tr>
-        <td>There are exceptions</td>
-        <td>Parenthesis are optional except for input parameters </td>
-      </tr>
-       <tr>
-        <td>Large standard library</td>
-        <td>no abstract or interface</td>
-      </tr>
-       <tr>
-        <td>There are similar boolean values True and False</td>
-        <td>null is called nil</td>
-      </tr>
-    </table>
-    <h4>Ruby from Python</h4>
-    <table class="table table-borderless">
-      <caption>Table 5: Ruby from Python</caption>
-      <thead>
-        <tr>
-          <th>Similarities</th>
-          <th>Differences</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>Ipsum Lorem</td>
-        <td>Ipsum Lorem</td>
-      </tr>
-    </table>
-  </div>
+<div class="jumbotron text-left">
+  <img src="assets/ruby.png" height="100">
+  <h5>CS 354: Programming Languages (Spring 2021)</h5>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Team Perch</a>
+  <ul class="navbar-nav">
+    <li class="navbar-item"><a class="nav-link" href="index.html">Home&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="documentation.html">Documentation&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="installation.html">Installation&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="comparisons.html">Language Comparisons&nbsp;&nbsp;|</a></li>
+    <li class="navbar-item"><a class="nav-link" href="examples.html">Code Examples</a></li>
+  </ul>
+</nav>
+<div class="container" style="margin-top:30px">
+  <h3>Language Comparisons</h3>
+  <h4>Ruby from C</h4>
+  <table class="table table-borderless">
+    <caption>Table 1: Ruby from C</caption>
+    <thead>
+    <tr>
+      <th>Similarities</th>
+      <th>Differences</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>You may program procedurally if you like (but it will still be object-oriented behind the scenes).</td>
+      <td>You don’t need to compile your code. You just run it directly.</td>
+    </tr>
+    <tr>
+      <td>Most of the operators are the same (including the compound assignment and also bitwise operators). Though, Ruby doesn’t have <code>&nbsp;++&nbsp;</code> or <code>&nbsp;--&nbsp;</code>.</td>
+      <td>Objects are strongly typed (and variable names themselves have no type at all).</td>
+    </tr>
+    <tr>
+      <td>You’ve got <code>&nbsp;__FILE__&nbsp;</code> and <code>&nbsp;__LINE__&nbsp;</code>.</td>
+      <td>There’s no macros or preprocessor. No casts. No pointers (nor pointer arithmetic). No typedefs, sizeof, nor enums.</td>
+    </tr>
+    <tr>
+      <td>You can also have constants, though there’s no special const keyword. Const-ness is enforced by a naming convention instead — names starting with a capital letter are for constants.</td>
+      <td>There are no header files. You just define your functions (usually referred to as “methods”) and classes in the main source code files.</td>
+    </tr>
+    <tr>
+      <td>Strings go in double-quotes.</td>
+      <td>There’s no <code>&nbsp;#define&nbsp;</code>. Just use constants instead.</td>
+    <tr>
+      <td>Strings are mutable.</td>
+    <td>All variables live on the heap. Further, you don’t need to free them yourself—the garbage collector takes care of that.</td>
+    </tr>
+    <tr>
+      <td>Just like man pages, you can read most docs in your terminal window—though using the ri command.</td>
+      <td>Arguments to methods (i.e. functions) are passed by value, where the values are always object references.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>There’s no semicolons ending lines.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>The term “block” means something different. It’s for a block of code that you associate with a method call so the method body can call out to the block while it executes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>There are no variable declarations. You just assign to new names on-the-fly when you need them.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>When tested for truth, only false and nil evaluate to a false value. Everything else is true (including <code>&nbsp;0&nbsp;</code>, <code>&nbsp;0.0&nbsp;</code>, and <code>&nbsp;"0"&nbsp;</code>).</td>
+    </tr>
+  </table>
+  <h4>Ruby from Java</h4>
+  <table class="table table-borderless">
+    <caption>Table 2: Ruby from Java</caption>
+    <thead>
+    <tr>
+      <th>Similarities</th>
+      <th>Differences</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>Memory is managed for you via a garbage collector.</td>
+      <td>You don’t need to compile your code. You just run it directly.</td>
+    </tr>
+    <tr>
+      <td>Objects are strongly typed.</td>
+      <td>All member variables are private. From the outside, you access everything via methods.</td>
+    </tr>
+    <tr>
+      <td>There are public, private, and protected methods.</td>
+      <td>You use the end keyword after defining things like classes, instead of having to put braces around blocks of code.</td>
+    </tr>
+    <td></td>
+    <td>Everything is an object, including numbers like 2 and 3.14159.</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>There’s no static type checking.</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>Variable names are just labels; no type association.</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>The constructor is always named “initialize” instead of the name of the class.</td>
+    </tr>
+  </table>
+  <h4>Ruby from Perl</h4>
+  <table class="table table-borderless">
+    <caption>Table 3: Ruby from Perl</caption>
+    <thead>
+    <tr>
+      <th>Similarities</th>
+      <th>Differences</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>You’ve got a package management system, somewhat like CPAN (though it’s called RubyGems).</td>
+      <td>You don’t have the context-dependent rules like with Perl.</td>
+    </tr>
+    <tr>
+      <td>Regexes are built right in. Bon appétit!</td>
+      <td>A variable isn’t the same as the object to which it refers. Instead, it’s always just a reference to
+        an object.
+      </td>
+    </tr>
+    <tr>
+      <td>There’s a fairly large number of commonly-used built-ins.</td>
+      <td>Although $ and @ are used as the first character in variable names sometimes, rather than indicating
+        type, they indicate scope ($ for globals, @ for object instance, and @@ for class attributes).
+      </td>
+    </tr>
+    <tr>
+      <td>Parentheses are often optional.</td>
+      <td>Array literals go in brackets instead of parentheses.</td>
+    </tr>
+    <tr>
+      <td>Strings work basically the same.</td>
+      <td>Lists of lists are an array of arrays.</td>
+    </tr>
+    <tr>
+      <td>Regex quoting and delimiting syntax is comparable to Perl’s.</td>
+      <td>It’s def instead of sub.</td>
+    </tr>
+    <tr>
+      <td>You’ve got double-quotish variable interpolation, though it "looks #{like} this" (and you can put
+        any Ruby code you like inside that #{}).
+      </td>
+      <td>There’s no semicolons needed at the end of each line. Incidentally, you end things like function
+        definitions, class definitions, and case statements with the end keyword.
+      </td>
+    </tr>
+    <tr>
+      <td>Shell command expansion uses `backticks`.</td>
+      <td>Objects are strongly typed.</td>
+    </tr>
+    <tr>
+      <td>Embedded doc tools called rdoc.</td>
+      <td>There’s no eq, ne, lt, gt, ge, nor le.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>'=>' (fat comma) is only used for hash literals.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>There’s no undef. It’s not the same as an undefined variable. It evaluates to false if you treat it
+        like a boolean.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>When tested for truth, only false and nil evaluate to a false value. Everything else is true
+        (including 0, 0.0, and "0").
+      </td>
+    </tr>
+  </table>
+  <h4>Ruby from PHP</h4>
+  <table class="table table-borderless">
+    <caption>Table 4: Ruby from PHP</caption>
+    <thead>
+    <tr>
+      <th>Similarities</th>
+      <th>Differences</th>
+    </tr>
+    </thead>
+    <tr>
+      <td>Dynamically type</td>
+      <td>Strong typing</td>
+    </tr>
+    <tr>
+      <td>You have several class access control: public, protected and private</td>
+      <td>String, numbers , arrays are objects</td>
+    </tr>
+    <tr>
+      <td>There are exceptions</td>
+      <td>Parenthesis are optional except for input parameters </td>
+    </tr>
+    <tr>
+      <td>Large standard library</td>
+      <td>no abstract or interface</td>
+    </tr>
+    <tr>
+      <td>There are similar boolean values True and False</td>
+      <td>null is called nil</td>
+    </tr>
+  </table>
+</div>
 </body>
 
 </html>

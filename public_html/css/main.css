@@ -1,13 +1,21 @@
 code {
-  background: #efefef;
-  border-radius: 4px;
-  display: block;
-  white-space: pre-wrap;  
+  background: #eee;
 }
 
-.output {
-  background: #fff;
+.code-example,
+.code-output,
+.terminal-cmd {
+  border-radius: 8px;
+  display: block;
+  white-space: pre-wrap;
+}
+
+.code-output {
   color: navy;
+}
+
+.terminal-cmd {
+  color: darkslateblue;
 }
 
 h3 {
