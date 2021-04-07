@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -13,63 +14,74 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="./css/main.css">
 
-  <title>CS354 - LW1 : Team Perch : Ruby</title>
+  <title>CS354: Programming Languages (Spring 2021) - Team Perch</title>
 </head>
+
 <body>
-<div class="jumbotron text-left">
-  <img src="assets/ruby.png" height="100">
-  <h5>CS 354: Programming Languages - Team Perch</h5>
-</div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Team Perch</a>
-  <ul class="navbar-nav">
-    <li class="navbar-item"><a class="nav-link" href="index.html">Home&nbsp;&nbsp;|</a></li>
-    <li class="navbar-item"><a class="nav-link" href="documentation.html">Documentation&nbsp;&nbsp;|</a></li>
-    <li class="navbar-item"><a class="nav-link" href="installation.html">Installation&nbsp;&nbsp;|</a></li>
-    <li class="navbar-item"><a class="nav-link" href="comparisons.html">Language Comparisons&nbsp;&nbsp;|</a></li>
-    <li class="navbar-item"><a class="nav-link" href="examples.html">Code Examples</a></li>
-  </ul>
-</nav>
-<div class="container" style="margin-top:30px">
-  <h3>Code Examples</h3>
-  <p>
-  <h1>Hello World !</h1>
-  <br>puts "Hello World!"
+  <div class="jumbotron text-left">
+    <img src="assets/ruby.png" height="100">
+    <h5>CS 354: Programming Languages (Spring 2021)</h5>
+  </div>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Team Perch</a>
+    <ul class="navbar-nav">
+      <li class="navbar-item"><a class="nav-link" href="index.html">Home&nbsp;&nbsp;|</a></li>
+      <li class="navbar-item"><a class="nav-link" href="documentation.html">Documentation&nbsp;&nbsp;|</a></li>
+      <li class="navbar-item"><a class="nav-link" href="installation.html">Installation&nbsp;&nbsp;|</a></li>
+      <li class="navbar-item"><a class="nav-link" href="comparisons.html">Language Comparisons&nbsp;&nbsp;|</a></li>
+      <li class="navbar-item"><a class="nav-link" href="examples.html">Code Examples</a></li>
+    </ul>
+  </nav>
+  <div class="container" style="margin-top:30px">
+    <h3>Code Examples</h3>
+    <p>
+  <h5>Hello World!</h5>
+  <code>
+  puts "Hello World!"
+  </code>
+  <br>
+  <h6>Output:</h6>
+  <code class="output">
+  Hello World!
+  </code>
+  <h5>Reverse a string of text</h5>
+  <code>
+  puts "Enter the String:
+  str = gets.chomp
+  newstr = ' '
 
-  <h1>Output :</h1>
-  <br>Hello World!
+  for  i in  1..str.length
+      newstr += str1[str.length - i]
+  end
 
-
-  <h1>Reverse a given string</h1>
-  <br>puts "Enter the String:
-  <br>str=gets.chomp
-  <br>newstr= ' '
-  <br>for  i in  1..str.length
-  <br>    newstr+=str1[str.length - i]
-  <br>end
-
-  <br>puts "The reversed string is #{newstr}"
-
-  <h1>Output :</h1>
-  <br>Enter the String:
-  <br>HelloWorld
-  <br>The reversed string is dlroWolleH
-
-  <h1>Adding 2 numbers</h1>
-  <br>puts "Enter first value: "
-  <br>num1=gets.chomp.to_i
-  <br>puts "Enter second value: "
-  <br>num2=gets.chomp.to_i
-  <br>sum=num1+num2
-  <br>puts "The sum of these 2 numbers is #{sum}"
-
-  <h1>Output :</h1>
-  <br>Enter first value:
-  <br>5
-  <br>Enter second value:
-  <br>7
-  <br>The sum of these 2 numbers is 12
-  </p>
-</div> <!-- container -->
+  puts "The reversed string is: #{newstr}"
+  </code>
+  <br>
+  <h6>Output:</h6>
+  <code class="output">
+  Enter the String:
+  HelloWorld
+  The reversed string is: dlroWolleH
+  </code>
+  <h5>Sum two numbers</h5>
+  <code>
+  puts "Enter first value: "
+  num1 = gets.chomp.to_i
+  puts "Enter second value: "
+  num2 = gets.chomp.to_i
+  sum = num1 + num2
+  puts "The sum of these 2 numbers is: #{sum}"
+  </code>
+  <br>
+  <h6>Output:</h6>
+  <code class="output">
+  Enter first value:
+  5
+  Enter second value:
+  7
+  The sum of these 2 numbers is: 12
+  </code>
+  </div> <!-- container -->
 </body>
+
 </html>

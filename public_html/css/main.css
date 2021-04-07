@@ -1,3 +1,15 @@
+code {
+  background: #efefef;
+  border-radius: 4px;
+  display: block;
+  white-space: pre-wrap;  
+}
+
+.output {
+  background: #fff;
+  color: navy;
+}
+
 h3 {
   color: darkred;
 }
