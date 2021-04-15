@@ -6,9 +6,14 @@ class Item
 
   #Constructor method (uses initialize)
   def initialize(name, price, quantity)
+    if quantity > 0 
+      @itemQuant = quantity
+    else
+      puts("Quantity must be greater than 0")
+      exit
+    end
     @itemName = name
     @itemPrice = price
-    @itemQuant = quantity
     @@numItems += 1
   end
 
