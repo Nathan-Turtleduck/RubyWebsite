@@ -1,4 +1,4 @@
-id,item,inventory_qty,price
+id,item,quantity,price
 1,Mousse - Mango,43,4.27
 2,Bread Foccacia Whole,55,6.3
 3,Beer - Corona,63,6.43
