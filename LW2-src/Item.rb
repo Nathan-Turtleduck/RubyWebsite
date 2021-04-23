@@ -55,5 +55,9 @@ class Item
   def toString()
     retString = "#{@itemQuant} #{@itemName}(s) at $#{@itemPrice}"
   end  
+  
+  def compare(item)
+      @itemName == item.itemName
+  end
 
 end
