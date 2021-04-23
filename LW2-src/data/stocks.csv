@@ -1,4 +1,4 @@
-id,stock_market,stock_market_cap,stock_sector,stock_symbol,stock_industry,share_price
+id,stock_market,stock_market_cap,stock_sector,name,stock_industry,price
 1,NYSE,$927.58M,Capital Goods,CBPX,Building Materials,31.01
 2,NYSE,$323.37M,n/a,STK,n/a,43.35
 3,NYSE,n/a,n/a,ARIC,n/a,43.55
