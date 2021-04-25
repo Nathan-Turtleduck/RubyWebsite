@@ -1,32 +1,45 @@
 #Author: Nicolas Dupuis, Ben Davies, Nathan Maroko, Ryan Rickerl
 #Date: 4/19/2021
 #Desc: Select and Parse a csv file
-require "csv"
+require 'csv'
+require './Item'
 
 class ReadCSV
     #CSV file to read our shopping cart or inventory should be with the following headers: name, price, quantity
-    
 
-   #puts "Enter a filename for your csv: "
-   #filename = gets
-    
-    arrayItems = []      #create an array to store the Items 
-    
-    nameIdx = nil       #creates a variable that will hold an integer
-    priceIdx = nil      #creates a variable that will hold an integer
-    quantityIdx = nil   #creates a variable that will hold an integer
+    puts "Enter a filename for your csv: "
+    filename = gets.chomp
 
-    data = CSV.read("data/grocery.csv")
-    cols = data.shift()
+    # Check file for existence and readability
+    if File.exists?(filename)
+        if ! File.readable?(filename)
+            puts "ERROR:: file '#{filename}' is not readable. Exiting"
+            exit
+        end
+    else
+        puts "ERROR:: file '#{filename}' does not exist. Exiting"
+        exit
+    end
 
-    for i in 0..cols.length
-        value = cols[i].to_s
+    # create variables to store the references to column indexes
+    @nameIdx = nil
+    @priceIdx = nil
+    @quantityIdx = nil
 
-        if value.casecmp?("name")
+    # read CSV file into an array
+    data = CSV.read(filename)
+
+    # feader
+    colNames = data.shift()
+
+    for i in 0..colNames.length
+        colId = colNames[i].to_s            # convert to string for comparison
+
+        if colId.casecmp?("name")           # ignorecase compare for "name"
             @nameIdx = i
-        elsif value.casecmp?("price")
+        elsif colId.casecmp?("price")       # ignorecase compare for "price"
             @priceIdx = i
-        elsif value.casecmp?("quantity")
+        elsif colId.casecmp?("quantity")    # ignorecase compare for "quantity"
             @quantityIdx = i
         end
     end
@@ -37,18 +50,27 @@ class ReadCSV
         exit
     end
 
-    puts "name: #@nameIdx\nprice: #@priceIdx\nquantity: #@quantityIdx"
+    @itemList = []      # create an array to store the Items 
 
     for row in data
-        printf "[%i] name: %-50s  price: %5.2f    quantity: %5s\n", row[0], row[@nameIdx], row[@priceIdx], row[@quantityIdx]
+        name = row[@nameIdx]
+        price = row[@priceIdx].to_f
+        quantity = row[@quantityIdx].to_i
 
-        #arrayItems << Item.initialize(row[@nameIdx], row[@priceIdx], row[@quantiyIdx])
+        item = Item.new(name, price, quantity)
+
+        @itemList << item
     end
     
+    # print itemList
+    for item in @itemList
+        puts item.toString
+    end
+
 #    #returns the total price of the item(s) as a string
 #    def PrintFileData()
-#        for i in 0..(arrayItems.length)
-#            puts arrayItems[i].toString()
+#        for i in 0..(itemList.length)
+#            puts itemList[i].toString()
 #        end
 #    end
 #
@@ -56,12 +78,12 @@ class ReadCSV
 #    def AggregateItems()
 #        aggregatedItems = []
 #
-#        for i in 0..(arrayItems.length)
-#            for j in 0..(arrayItems.length)
-#                if((i != j) && (arrayItems[i].getName == arrayItems[j].getName))
-#                    newQuantity = arrayItems[i].getQuantity + arrayItems[j].getQuantity
-#                    newPrice = arrayItems[i].getPrice + arrayItems[j].getPrice
-#                    newName = arrayItems[i].getName
+#        for i in 0..(itemList.length)
+#            for j in 0..(itemList.length)
+#                if((i != j) && (itemList[i].getName == itemList[j].getName))
+#                    newQuantity = itemList[i].getQuantity + itemList[j].getQuantity
+#                    newPrice = itemList[i].getPrice + itemList[j].getPrice
+#                    newName = itemList[i].getName
 #                    aggregatedItems << Item.initialize(newName, newPrice, newQuantity)
 #                end
 #            end

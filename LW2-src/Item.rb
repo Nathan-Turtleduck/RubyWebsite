@@ -1,63 +1,62 @@
-#Author: Nathan Maroko
-#Date: 4/15/2021
-#Desc: Defines an Item object that stores a name,price, and quantity
-class Item
-  @@numItems = 0 #class variable - can be accessed from all objects
+# Author: Nathan Maroko
+# Date: 4/15/2021
+# Desc: Defines an Item object that stores a name,price, and quantity
 
-  #Constructor method (uses initialize)
+class Item
+  #@@numItems = 0 # class variable - can be accessed from all objects
+
+  # Constructor method (uses initialize)
   def initialize(name, price, quantity)
-    if quantity > 0 
-      @itemQuant = quantity
-    else
-      puts("Quantity must be greater than 0")
+    if quantity < 0 
+      puts("ERROR:: quantity must be greater than 0. Exiting")
       exit
     end
-    @itemName = name
-    @itemPrice = price
-    @@numItems += 1
+
+    @name = name
+    @price = price
+    @quantity = quantity
   end
 
-  #returns the total price of the item(s) as a string
+  # returns the total price of the item(s) as a string
   def getPrice()
-    total = @itemPrice * @itemQuant
+    total = @price * @quantity
     totalString = "%0.2f" % [total]
   end
 
-  #returns the numItems class variable
+  # returns the numItems class variable
   def getItems()
     @@numItems
   end
 
-  def getQuantity
-    @itemQuant
+  def getQuantity()
+    @quantity
   end
 
   def setQuantity(quantity)
-    @itemQuant = quantity
+    @quantity = quantity
   end
 
   def getPrice()
-    @itemPrice
+    @price
   end
 
   def setPrice(price)
-    @itemPrice = price
+    @price = price
   end
 
   def getName()
-    @itemName
+    @name
   end
 
   def setName(name)
-    @itemName = name
+    @name = name
   end
 
   def toString()
-    retString = "#{@itemQuant} #{@itemName}(s) at $#{@itemPrice}"
+    retString = sprintf("%4i : %-50s : %5.2f", @quantity, @name, @price)
   end  
   
   def compare(item)
-      @itemName == item.itemName
+      @name == item.name
   end
-
 end
