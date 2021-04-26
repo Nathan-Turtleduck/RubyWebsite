@@ -62,31 +62,37 @@ class ReadCSV
         @itemList << item
     end
     
+    @total = 0
     # print itemList
     for item in @itemList
+        quantity = item.getQuantity
+        price = item.getPrice
+        @total += quantity * price
         puts item.toString
     end
 
-#    #returns the total price of the item(s) as a string
-#    def PrintFileData()
-#        for i in 0..(itemList.length)
-#            puts itemList[i].toString()
-#        end
-#    end
-#
-#    #aggregates the data from the file to combine duplicate items into a single field
-#    def AggregateItems()
-#        aggregatedItems = []
-#
-#        for i in 0..(itemList.length)
-#            for j in 0..(itemList.length)
-#                if((i != j) && (itemList[i].getName == itemList[j].getName))
-#                    newQuantity = itemList[i].getQuantity + itemList[j].getQuantity
-#                    newPrice = itemList[i].getPrice + itemList[j].getPrice
-#                    newName = itemList[i].getName
-#                    aggregatedItems << Item.initialize(newName, newPrice, newQuantity)
-#                end
-#            end
-#        end
-#    end
+    printf "\nTotal Inventory Worth: $%.2f\n", @total
+
+    # returns the total price of the item(s) as a string
+    #def print_file_data()
+    #    for i in 0..(itemList.length)
+    #        puts itemList.toString()
+    #    end
+    #end
+
+    #aggregates the data from the file to combine duplicate items into a single field
+    #def AggregateItems()
+    #    aggregatedItems = []
+    #
+    #    for i in 0..(itemList.length)
+    #        for j in 0..(itemList.length)
+    #            if((i != j) && (itemList[i].getName == itemList[j].getName))
+    #                newQuantity = itemList[i].getQuantity + itemList[j].getQuantity
+    #                newPrice = itemList[i].getPrice + itemList[j].getPrice
+    #                newName = itemList[i].getName
+    #                aggregatedItems << Item.initialize(newName, newPrice, newQuantity)
+    #            end
+    #        end
+    #    end
+    #end
 end
