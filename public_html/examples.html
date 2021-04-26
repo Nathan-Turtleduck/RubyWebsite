@@ -34,19 +34,19 @@
     </ul>
   </nav>
   <div class="container" style="margin-top:30px">
-    <h3>Code Examples</h3>
-  <h5>Hello World!</h5>
-  <code class="code-example">
+    <h3>Simple Code Examples</h3>
+    <h5>Hello World!</h5>
+    <code class="code-example">
   puts "Hello World!"
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   Hello World!
-  </code>
-  <br>
-  <h5>Reverse a string of text</h5>
-  <code class="code-example">
+    </code>
+    <br>
+    <h5>Reverse a string of text</h5>
+    <code class="code-example">
   puts "Enter the String:
   str = gets.chomp
   newstr = ' '
@@ -56,55 +56,108 @@
   end
 
   puts "The reversed string is: #{newstr}"
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   Enter the String:
   HelloWorld
   The reversed string is: dlroWolleH
-  </code>
-  <br>
-  <h5>Sum two numbers</h5>
-  <code class="code-example">
+    </code>
+    <br>
+    <h5>Sum two numbers</h5>
+    <code class="code-example">
   puts "Enter first value: "
   num1 = gets.chomp.to_i
   puts "Enter second value: "
   num2 = gets.chomp.to_i
   sum = num1 + num2
   puts "The sum of these 2 numbers is: #{sum}"
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   Enter first value:
   5
   Enter second value:
   7
   The sum of these 2 numbers is: 12
-  </code>
-  <br>
-  <h5>Printing a list of elements stored in an Array</h5>
-  <code class="code-example">
+    </code>
+    <br>
+    <h5>Printing a list of elements stored in an Array</h5>
+    <code class="code-example">
   ourList = [12,13,14,15,16,17]
 
   for i in 0..ourList.length
     puts ourList[i]
   end
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   12
   13
   14
   15
   16
   17
-  </code>
-  <br>
-  <h5>Creating an Array of elements from user input</h5>
-  <code class="code-example">
+    </code>
+    <br>
+    <h5>Method call 'retValue'</h5>
+    <code class="code-example">
+  def retValue(a,b,c)
+      a = 2
+      b = 3
+      c = 12
+  end
+  
+  a = nil
+  b = nil
+  c = nil
+  
+  puts(retValue(a,b,c))
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
+  12
+    </code>
+    <br>
+    <h5>Fibonacci numbers</h5>
+    <code class="code-example">
+  # first number of seq
+  a = 0
+  
+  # second number of seq
+  b = 1
+  
+  puts "The Fibonacci series is:"
+  
+  for i in 0..6
+    puts a
+    
+    fn = a + b
+    a = b
+    b = fn
+  end
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
+  The Fibonacci series is:
+  0
+  1
+  1
+  2
+  3
+  5
+  8
+    </code>
+    <br>
+    <br>
+    <h3>Advanced Code Examples</h3>
+    <h5>Creating an Array of elements from user input</h5>
+    <code class="code-example">
   userList = Array[]
   puts "How many values will your array hold?"
   numVals = gets.to_i
@@ -125,10 +178,10 @@
 
   puts "The array contains the following: "
   puts "#{elements}"
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   How many values will your array hold?
   4
 
@@ -143,10 +196,10 @@
 
   The array contains the following:
   11  12  9  10
-  </code>
-  <br>
-  <h5>Hash of Arrays with formatted output</h5>
-  <code class="code-example">
+    </code>
+    <br>
+    <h5>Hash of Arrays with formatted output</h5>
+    <code class="code-example">
   fruits = {
     "apples" => ["red delicious", "granny smith", "fuji", "gala", "honeycrisp"],
     "oranges" => ["blood", "navel", "satsuma"],
@@ -159,10 +212,10 @@
       puts(fruits[fruit].sort)
       puts()
   end
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   APPLES
   Array["red delicious", "granny smith", "fuji", "gala", "honeycrisp"]
   fuji
@@ -184,10 +237,10 @@
   huckleberry
   raspberry
   strawberry
-  </code>
-  <br>
-  <h5>Car class</h5>
-  <code class="code-example">
+    </code>
+    <br>
+    <h5>Car class</h5>
+    <code class="code-example">
   class Car
     @@numCars = 0 #class variable - can be accessed from all objects
 
@@ -225,14 +278,14 @@
   puts(toyotaC.toString())
   monthlyPayment = toyotaC.calculatePayment(5000,24)
   puts("5000 down for a monthly payment of $#{monthlyPayment} for 24 months")
-  </code>
-  <br>
-  <h6>Output:</h6>
-  <code class="code-output">
+    </code>
+    <br>
+    <h6>Output:</h6>
+    <code class="code-output">
   2010 Toyota Corolla at $15000.0
   5000 down for a monthly payment of $416.67 for 24 months
-  </code>
-  <br>
+    </code>
+    <br>
   </div> <!-- container -->
 </body>
 
