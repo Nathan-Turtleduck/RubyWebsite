@@ -1,6 +1,7 @@
-# Author: Nathan Maroko
-# Date: 4/15/2021
-# Desc: Defines an Item object that stores a name,price, and quantity
+# file: Item.rb
+# author: Nicolas Dupuis, Ben Davies, Nathan Maroko, Ryan Rickerl
+# date: 4/15/2021
+# desc: Defines an Item object that stores a name,price, and quantity
 
 class Item
   # Constructor method (uses initialize)

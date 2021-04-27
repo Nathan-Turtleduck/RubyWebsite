@@ -1,98 +1,100 @@
-#Author: Nicolas Dupuis, Ben Davies, Nathan Maroko, Ryan Rickerl
-#Date: 4/19/2021
-#Desc: Select and Parse a csv file
+# file: ReadCSV.rb
+# author: Nicolas Dupuis, Ben Davies, Nathan Maroko, Ryan Rickerl
+# date: 4/19/2021
+# desc: Select and Parse a csv file
+
 require 'csv'
 require './Item'
 
 class ReadCSV
     #CSV file to read our shopping cart or inventory should be with the following headers: name, price, quantity
-
-    puts "Enter a filename for your csv: "
-    filename = gets.chomp
-
-    # Check file for existence and readability
-    if File.exists?(filename)
-        if ! File.readable?(filename)
-            puts "ERROR:: file '#{filename}' is not readable. Exiting"
+    def initialize(filename)
+        # Check file for existence and readability
+        if File.exists?(filename)
+            if ! File.readable?(filename)
+                puts "ERROR:: file '#{filename}' is not readable. Exiting"
+                exit
+            end
+        else
+            puts "ERROR:: file '#{filename}' does not exist. Exiting"
             exit
         end
-    else
-        puts "ERROR:: file '#{filename}' does not exist. Exiting"
-        exit
+
+        @itemList = []
+
+        readFile(filename)
     end
 
-    # create variables to store the references to column indexes
-    @nameIdx = nil
-    @priceIdx = nil
-    @quantityIdx = nil
+    def getData()
+        return @itemList
+    end
 
-    # read CSV file into an array
-    data = CSV.read(filename)
+    def printData()
+        printf "+------------------------------------------------------------+\n"
+        printf "| Inventory list                                             |\n"
+        printf "+-----------------------------------------------+----+-------+\n"
 
-    # feader
-    colNames = data.shift()
+        item_count = 0
+        items_warehoused = 0
+        inventory_value = 0
 
-    for i in 0..colNames.length
-        colId = colNames[i].to_s            # convert to string for comparison
+        # print itemList
+        for item in @itemList
+            name = item.getName
+            quantity = item.getQuantity
+            price = item.getPrice
 
-        if colId.casecmp?("name")           # ignorecase compare for "name"
-            @nameIdx = i
-        elsif colId.casecmp?("price")       # ignorecase compare for "price"
-            @priceIdx = i
-        elsif colId.casecmp?("quantity")    # ignorecase compare for "quantity"
-            @quantityIdx = i
+            printf "| %-45s | %2i | $%0.2f |\n", name, quantity, price
+
+            item_count += 1
+            items_warehoused += quantity
+            inventory_value += quantity * price
+        end
+
+        printf "+-----------------------------------------------+----+-------+\n"
+        printf "Total number of unique items in inventory: %i\n", item_count
+        printf "Total number of items warehoused: %i\n", items_warehoused
+        printf "Total value of inventory: $%0.2f\n", inventory_value
+    end
+
+    private
+    def readFile(filename)
+        @data = CSV.read(filename)
+
+        # get the headers
+        colNames = @data.shift()
+
+        # create variables to store the references to column indexes
+        nameIdx = nil
+        priceIdx = nil
+        quantityIdx = nil
+
+        for i in 0..colNames.length
+            colId = colNames[i].to_s            # convert to string for comparison
+
+            if colId.casecmp?("name")           # ignorecase compare for "name"
+                nameIdx = i
+            elsif colId.casecmp?("price")       # ignorecase compare for "price"
+                priceIdx = i
+            elsif colId.casecmp?("quantity")    # ignorecase compare for "quantity"
+                quantityIdx = i
+            end
+        end
+
+        if !(nameIdx and priceIdx and quantityIdx)
+            puts "The provided CSV file is formatted incorrectly."
+            puts "Please include the following headers: name, price, quantity."
+            exit
+        end
+
+        for row in @data
+            name = row[nameIdx]
+            price = row[priceIdx].to_f
+            quantity = row[quantityIdx].to_i
+
+            item = Item.new(name, price, quantity)
+
+            @itemList.push(item)
         end
     end
-
-    if !(@nameIdx and @priceIdx and @quantityIdx)
-        puts "The provided CSV file is formatted incorrectly."
-        puts "Please include the following headers: name, price, quantity."
-        exit
-    end
-
-    @itemList = []      # create an array to store the Items 
-
-    for row in data
-        name = row[@nameIdx]
-        price = row[@priceIdx].to_f
-        quantity = row[@quantityIdx].to_i
-
-        item = Item.new(name, price, quantity)
-
-        @itemList << item
-    end
-    
-    @total = 0
-    # print itemList
-    for item in @itemList
-        quantity = item.getQuantity
-        price = item.getPrice
-        @total += quantity * price
-        puts item.toString
-    end
-
-    printf "\nTotal Inventory Worth: $%.2f\n", @total
-
-    # returns the total price of the item(s) as a string
-    #def print_file_data()
-    #    for i in 0..(itemList.length)
-    #        puts itemList.toString()
-    #    end
-    #end
-
-    #aggregates the data from the file to combine duplicate items into a single field
-    #def AggregateItems()
-    #    aggregatedItems = []
-    #
-    #    for i in 0..(itemList.length)
-    #        for j in 0..(itemList.length)
-    #            if((i != j) && (itemList[i].getName == itemList[j].getName))
-    #                newQuantity = itemList[i].getQuantity + itemList[j].getQuantity
-    #                newPrice = itemList[i].getPrice + itemList[j].getPrice
-    #                newName = itemList[i].getName
-    #                aggregatedItems << Item.initialize(newName, newPrice, newQuantity)
-    #            end
-    #        end
-    #    end
-    #end
 end
