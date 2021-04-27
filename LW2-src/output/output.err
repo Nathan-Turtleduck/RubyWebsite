@@ -1,0 +1,15 @@
+$> ruby PrintInventory.rb
+Enter a filename for your inventory: 
+data/cars.csv
+The provided CSV file is formatted incorrectly.
+Please include the following headers: name, price, quantity.
+
+$> ruby PrintInventory.rb
+Enter a filename for your inventory: 
+data/foo-bar.csv
+ERROR:: file 'data/foo-bar.csv' does not exist. Exiting
+
+$> ruby PrintInventory.rb
+Enter a filename for your inventory: 
+non-readable.csv
+ERROR:: file './non-readable.csv' is not readable. Exiting

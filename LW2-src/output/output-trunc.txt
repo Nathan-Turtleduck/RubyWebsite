@@ -1,0 +1,22 @@
+$> ruby PrintInventory.rb
+Enter a filename for your inventory: 
+data/grocery.csv
++------------------------------------------------------------+
+| Inventory list                                             |
++-----------------------------------------------+----+-------+
+| Mousse - Mango                                | 43 | $4.27 |
+| Bread Foccacia Whole                          | 55 | $6.30 |
+| Beer - Corona                                 | 63 | $6.43 |
+| Napkin White - Starched                       | 40 | $7.32 |
+| Remy Red                                      | 35 | $5.90 |
+
+......
+
+| Chocolate Liqueur - Godet White               | 72 | $4.41 |
+| Dawn Professionl Pot And Pan                  | 46 | $3.99 |
+| Table Cloth 54x54 Colour                      | 96 | $5.77 |
+| Aspic - Amber                                 |  9 | $9.71 |
++-----------------------------------------------+----+-------+
+Total number of unique items in inventory: 1000
+Total number of items warehoused: 50657
+Total value of inventory: $265168.52
