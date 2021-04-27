@@ -40,9 +40,9 @@
       To accomplish our goal, two classes were created along with an execution script.
     </p>
     <ul>
-      <li><a href="#PrintInventory">PrintInventory.rb</a>&#8212 execution script</li>
-      <li><a href="#ReadCSV">ReadCSV.rb</a>&#8212 class for reading CSV and populating data structure</li>
-      <li><a href="#Item">Item.rb</a>&#8212 class with defines an inventory item</li>
+      <li><a href="#PrintInventory">PrintInventory.rb</a>&nbsp;&#8211;&nbsp;execution script</li>
+      <li><a href="#ReadCSV">ReadCSV.rb</a>&nbsp;&#8211;&nbsp;class for reading CSV and populating data structure</li>
+      <li><a href="#Item">Item.rb</a>&nbsp;&#8211;&nbsp;class with defines an inventory item</li>
     </ul>
     <h3>CSV format</h3>
     <p>
@@ -91,6 +91,25 @@
   Total value of inventory: $265168.52
     </code>
     <br>
+    <h3>Error handling</h3>
+    <code class="code-output">
+  $> ruby PrintInventory.rb
+  Enter a filename for your inventory: 
+  data/cars.csv
+  The provided CSV file is formatted incorrectly.
+  Please include the following headers: name, price, quantity.
+  
+  $> ruby PrintInventory.rb
+  Enter a filename for your inventory: 
+  data/foo-bar.csv
+  ERROR:: file 'data/foo-bar.csv' does not exist. Exiting
+  
+  $> ruby PrintInventory.rb
+  Enter a filename for your inventory: 
+  non-readable.csv
+  ERROR:: file './non-readable.csv' is not readable. Exiting
+    </code>
+    <br>
     <h3>Future improvements</h3>
     <ol>
       <li>ETL process for CSV input should be dynamic.</li>
@@ -98,6 +117,8 @@
       <li>SQLite database is a possible use candidate depending on scale/needs.</li>
       <li>Selectable output format.</li>
     </ol>
+    <a class="top" href="#">Return to top</a>
+    <br><br>
     <h3>Code</h3>
     <h5><a name="PrintInventory">PrintInventory.rb</a></h5>
     <code class="code-example">
